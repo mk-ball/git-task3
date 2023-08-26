@@ -1,0 +1,63 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Bookers</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <dvi class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
+          <li class="li-text ">
+            <%= link_to  user_path(current_user), class:"nav-link text-light" do %>
+              <i class="fa-solid fa-home"></i>Home
+            <% end %>
+          </li>
+          <li class="li-text">
+            <%= link_to users_path, class:"nav-link text-light" do %>
+              <i class="fa-solid fa-users"></i>Users
+            <% end %>
+          </li>
+          <li class="li-text">
+
+            <%= link_to books_path, class:"nav-link text-light" do %>
+              <i class="fa-solid fa-book-open"></i>Books
+            <% end %>
+          </li>
+          <li class="li-text">
+
+            <%= link_to destroy_user_session_path, class:"nav-link text-light" ,method: :delete do %>
+              <i class="fa-solid fa-sign-out-alt"></i>Log out
+            <% end %>
+          </li>
+          <% else %>
+          <li class="li-text ">
+
+            <%= link_to root_path, class:"nav-link text-light" do %>
+              <i class="fa-solid fa-home"></i>Home
+            <% end %>
+          </li>
+          <li class="li-text">
+
+            <%= link_to home_about_path, class:"nav-link text-light" do %>
+              <i class="fa-solid fa-link"></i>About
+            <% end %>
+          </li>
+          <li class="li-text">
+
+            <%= link_to  new_user_registration_path, class:"nav-link text-light" do %>
+              <i class="fa-solid fa-user-plus"></i>Sign up
+            <% end %>
+          </li>
+          <li class="li-text">
+
+            <%= link_to new_user_session_path, class:"nav-link text-light" do %>
+              <i class="fas fa-sign-in-alt"></i>Log in
+            <% end %>
+          </li>
+        <% end %>
+        </ul>
+      </dvi>
+    </div>
+  </nav>
+</header>
